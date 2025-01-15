@@ -1,0 +1,25 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/cinema-project/cinema-frontend/node_modules
+/cinema-project/cinema-backend/node_modules
+
+/cinema-project/cinema-frontend/.pnp
+/cinema-project/cinema-frontend/.pnp.js
+
+# testing
+/cinema-project/cinema-frontend/coverage
+
+# production
+/cinema-project/cinema-frontend/build
+
+# misc
+/cinema-project/cinema-frontend/.DS_Store
+/cinema-project/cinema-frontend/.env.local
+/cinema-project/cinema-frontend/.env.development.local
+/cinema-project/cinema-frontend/.env.test.local
+/cinema-project/cinema-frontend/.env.production.local
+
+/cinema-project/cinema-frontend/npm-debug.log*
+/cinema-project/cinema-frontend/yarn-debug.log*
+/cinema-project/cinema-frontend/yarn-error.log*
