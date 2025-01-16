@@ -53,9 +53,12 @@ router.put('/:id', async (req, res) => {
 // Get cinema availability for a specific movie
 router.get('/:id/availability', async (req, res) => {
   try {
-    const availability = await CinemaAvailability.findAll({ where: { film_id: req.params.id } });
+    const availability = await CinemaAvailability.findAll({
+      where: { film_id: req.params.id },
+    });
     res.json(availability);
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: err.message });
   }
 });

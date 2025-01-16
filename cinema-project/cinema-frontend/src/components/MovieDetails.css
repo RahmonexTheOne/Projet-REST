@@ -13,6 +13,15 @@
 }
 
 .movie-details-left h1 {
+    color: #ffffff !important;
+    font-size: 50px !important;
+}
+.movie-details-left h2 {
+    color: #c0c0c0 !important;
+    font-weight: bold !important;
+}
+
+.movie-details-left h1 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
@@ -49,13 +58,11 @@
   
 /* Adjust movie banner size */
 .movie-banner {
-    width: 130%; /* Increase the image size by 1.5x */
-    max-width: 400px; /* Limit the maximum size */
-    height: auto;
-    border-radius: 10px;
+    width: 80%;
+    border-radius: 8px;
     margin-bottom: 1rem;
     margin-top: 1rem;
-}
+  }
   
 /* Reduce padding around the right section */
 .movie-details-right {
@@ -79,3 +86,63 @@
     margin: 0;
     margin-bottom: 1rem;
 }
+
+.cinema-availability {
+    margin-top: 1rem;
+}
+  
+.cinema-section {
+    margin-bottom: 2rem;
+}
+  
+.cinema-name {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+
+.showtime-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+  
+.showtime-box {
+    background-color: #44444417;
+    border: 1px solid #535353;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.showtime-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.return-home-button {
+    background-color: #141414;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    font-weight: normal;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.return-home-button:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+}
+
+.return-home-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ff5733;
+}
+  

@@ -1,5 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
-    const CinemaAvailability = sequelize.define('CinemaAvailability', {
+  const CinemaAvailability = sequelize.define(
+    'CinemaAvailability',
+    {
       cinema_name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -16,15 +18,18 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+    },
+    {
+      tableName: 'cinema_availabilities', // Explicitly specify the table name
+    }
+  );
+
+  CinemaAvailability.associate = (models) => {
+    CinemaAvailability.belongsTo(models.Film, {
+      foreignKey: 'film_id',
+      onDelete: 'CASCADE',
     });
-  
-    CinemaAvailability.associate = (models) => {
-      CinemaAvailability.belongsTo(models.Film, {
-        foreignKey: 'film_id',
-        onDelete: 'CASCADE',
-      });
-    };
-  
-    return CinemaAvailability;
   };
-  
+
+  return CinemaAvailability;
+};

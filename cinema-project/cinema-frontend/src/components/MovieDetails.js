@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './MovieDetails.css'; // Import the updated CSS
 
 function MovieDetails() {
   const { id } = useParams();
+  const navigate = useNavigate(); // For navigation
   const [movie, setMovie] = useState(null);
   const [availability, setAvailability] = useState([]);
 
@@ -23,13 +24,30 @@ function MovieDetails() {
     fetchMovie();
   }, [id]);
 
+  // Group availability by cinema name
+  const groupedAvailability = availability.reduce((acc, curr) => {
+    if (!acc[curr.cinema_name]) {
+      acc[curr.cinema_name] = [];
+    }
+    acc[curr.cinema_name].push(curr);
+    return acc;
+  }, {});
+
   if (!movie) return <div>Loading...</div>;
 
   return (
     <div className="movie-details-container">
+      {/* Return to Home */}
+      <button
+        className="return-home-button"
+        onClick={() => navigate('/')} // Navigate to the home page
+      >
+       Return to Home
+      </button>
+
       {/* Left Section */}
       <div className="movie-details-left">
-        <h1>{movie.titre}</h1>
+        <h1 className="movie-title">{movie.titre}</h1>
         <p className="movie-description">{movie.description || 'No description available.'}</p>
         <h2>Trailer</h2>
         {movie.trailer ? (
@@ -45,13 +63,20 @@ function MovieDetails() {
 
         <h2>Cinemas and Showtimes</h2>
         {availability.length > 0 ? (
-          <ul className="movie-availability">
-            {availability.map((slot) => (
-              <li key={slot.id}>
-                <strong>{slot.cinema_name}</strong> - {slot.date} at {slot.time}
-              </li>
+          <div className="cinema-availability">
+            {Object.keys(groupedAvailability).map((cinema) => (
+              <div key={cinema} className="cinema-section">
+                <h4 className="cinema-name">{cinema}</h4>
+                <div className="showtime-boxes">
+                  {groupedAvailability[cinema].map((slot) => (
+                    <div key={slot.id} className="showtime-box">
+                      {new Date(slot.date).toLocaleDateString()} - {slot.time}
+                    </div>
+                  ))}
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         ) : (
           <p>No availability found.</p>
         )}
