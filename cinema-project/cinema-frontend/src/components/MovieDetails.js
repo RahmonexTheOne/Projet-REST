@@ -23,12 +23,18 @@ function MovieDetails() {
   return (
     <div className="movie-details">
       <h2>{movie.titre}</h2>
+      {movie.banner && <img src={movie.banner} alt={`${movie.titre} banner`} style={{ maxWidth: '100%' }} />}
       <p><strong>Duration:</strong> {movie.duree} minutes</p>
       <p><strong>Language:</strong> {movie.langue}</p>
       <p><strong>Subtitles:</strong> {movie.sous_titres || 'N/A'}</p>
       <p><strong>Director:</strong> {movie.realisateur}</p>
       <p><strong>Actors:</strong> {movie.acteurs}</p>
       <p><strong>Minimum Age:</strong> {movie.age_minimum}</p>
+      {movie.trailer && (
+        <p>
+          <strong>Trailer:</strong> <a href={movie.trailer} target="_blank" rel="noopener noreferrer">Watch here</a>
+        </p>
+      )}
     </div>
   );
 }
