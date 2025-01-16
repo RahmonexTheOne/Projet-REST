@@ -22,4 +22,18 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Lister film avec ID
+router.get('/:id', async (req, res) => {
+  try {
+    const film = await Film.findByPk(req.params.id); // Fetch the film by primary key (ID)
+    if (!film) {
+      return res.status(404).json({ error: 'Film not found' });
+    }
+    res.json(film);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = router;
