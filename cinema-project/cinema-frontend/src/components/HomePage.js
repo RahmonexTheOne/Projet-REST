@@ -3,8 +3,10 @@ import axios from 'axios';
 import Slider from 'react-slick'; // React Slick for horizontal scrolling
 import './HomePage.css'; // Custom styles
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
+  const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   const [featuredMovie, setFeaturedMovie] = useState(null);
 
@@ -42,6 +44,9 @@ function HomePage() {
       <header className="homepage-header">
         <img src="/logo512.png" alt="Central Cinema Logo" className="logo-image" />
         <h1 className="logo">Central Cinema</h1>
+        <button className="moderator-button" onClick={() => navigate('/moderator')}>
+          Moderator Connection
+        </button>
       </header>
 
       {/* Featured Banner */}

@@ -118,3 +118,21 @@ h1, h2, h3, h4, h5, h6 {
   margin: 2rem 0;
   padding-left: 15px;
 }
+
+.moderator-button {
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: auto; /* Pushes the button to the right */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.moderator-button:hover {
+  background-color: #e14e2b;
+  transform: scale(1.05);
+}
