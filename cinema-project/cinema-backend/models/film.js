@@ -12,7 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     acteurs: { type: DataTypes.TEXT, allowNull: false },
     age_minimum: { type: DataTypes.INTEGER, allowNull: false },
     banner: { type: DataTypes.STRING }, // URL of the banner image
-    trailer: { type: DataTypes.STRING } // URL of the trailer video
+    trailer: { type: DataTypes.STRING }, // URL of the trailer video
+    genre: { type: DataTypes.STRING, allowNull: true },
+    description: { type: DataTypes.TEXT, allowNull: true }
   }, {
     timestamps: false
   });

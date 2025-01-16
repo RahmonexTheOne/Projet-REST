@@ -1,0 +1,81 @@
+/* Main Container */
+.movie-details-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    color: #fff;
+    margin: 2rem;
+}
+
+/* Left Section */
+.movie-details-left {
+    flex: 2; /* Take more space for text and trailer */
+}
+
+.movie-details-left h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+  
+
+.movie-description {
+    color: #8d8d8d;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.movie-trailer {
+    width: 100%;
+    height: 415px;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.movie-availability {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.movie-availability li {
+    margin-bottom: 1rem;
+    background: #2c2c2c;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+  
+  
+/* Adjust movie banner size */
+.movie-banner {
+    width: 130%; /* Increase the image size by 1.5x */
+    max-width: 400px; /* Limit the maximum size */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+  
+/* Reduce padding around the right section */
+.movie-details-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #111111d0;
+    padding: 0rem;
+    border-radius: 10px;
+}
+
+
+.movie-info h3 {
+    margin: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.movie-info p {
+    margin: 0;
+    margin-bottom: 1rem;
+}

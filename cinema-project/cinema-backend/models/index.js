@@ -7,7 +7,11 @@ const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
+const CinemaAvailability = require('./cinema_availability')(sequelize, DataTypes);
+
 const db = {};
+
+db.CinemaAvailability = CinemaAvailability;
 
 let sequelize;
 if (config.use_env_variable) {
