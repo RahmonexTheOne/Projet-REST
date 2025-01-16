@@ -55,7 +55,10 @@ function HomePage() {
           <div className="featured-content">
             <h2 className="featured-title">{featuredMovie.titre}</h2>
             <p className="featured-description">{featuredMovie.description || 'A must-watch movie!'}</p>
-            <button className="btn btn-primary">Watch Now</button>
+            <Link to={`/movie/${featuredMovie.id}`}>
+              <button className="btn btn-primary">Learn More</button>
+            </Link>
+            
           </div>
         </div>
       )}
