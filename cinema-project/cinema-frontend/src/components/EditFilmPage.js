@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './EditFilmPage.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon
+import { faBackward } from '@fortawesome/free-solid-svg-icons';
 
 function EditFilmPage() {
   const { id } = useParams();
@@ -46,7 +48,7 @@ function EditFilmPage() {
   return (
     <div className="edit-film-container">
       <button className="return-home-button" onClick={() => navigate('/moderator')}>
-        ⬅️ Return to Moderator Panel
+        <FontAwesomeIcon icon={faBackward} />
       </button>
       <h1>Edit Film</h1>
       <form onSubmit={handleSubmit} className="edit-film-form">

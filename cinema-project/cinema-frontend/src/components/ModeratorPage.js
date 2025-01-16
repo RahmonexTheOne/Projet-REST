@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon
+import { faHome } from '@fortawesome/free-solid-svg-icons'; // Import the home icon
 import axios from 'axios';
 import './ModeratorPage.css';
 
@@ -22,7 +24,7 @@ function ModeratorPage() {
   return (
     <div className="moderator-container">
       <button className="return-home-button" onClick={() => navigate('/')}>
-        ⬅️ Return to Home
+        <FontAwesomeIcon icon={faHome} />
       </button>
       <h1 className="moderator-title">Moderator Panel</h1>
       <div className="film-list">
