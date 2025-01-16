@@ -28,6 +28,24 @@
   color: #61dafb;
 }
 
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+.display-4 {
+  color: #ff5733;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+hr {
+  margin: 2rem 0;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
