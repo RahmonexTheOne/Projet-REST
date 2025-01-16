@@ -1,15 +1,21 @@
 /* Logo and Header */
 .homepage-header {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    background-color: #000;
-    color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #000;
+  color: #fff;
 }
+
+.logo-image {
+  width: 50px; /* Adjust the size as needed */
+  height: 50px;
+  margin-right: 1rem; /* Space between the logo and the title */
+}
+
 .logo {
   font-size: 2rem;
   font-weight: bold;
-  margin-left: 1rem;
 }
 
 /* Featured Banner */

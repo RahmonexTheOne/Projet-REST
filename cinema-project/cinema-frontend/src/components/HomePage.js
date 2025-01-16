@@ -40,6 +40,7 @@ function HomePage() {
     <div className="homepage">
       {/* Logo and Title */}
       <header className="homepage-header">
+        <img src="/logo512.png" alt="Central Cinema Logo" className="logo-image" />
         <h1 className="logo">Central Cinema</h1>
       </header>
 
