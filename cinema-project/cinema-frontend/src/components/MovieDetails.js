@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import FontAwesomeIcon
+import { faHome } from '@fortawesome/free-solid-svg-icons'; // Import the home icon
 import './MovieDetails.css'; // Import the updated CSS
 
 function MovieDetails() {
@@ -42,7 +44,7 @@ function MovieDetails() {
         className="return-home-button"
         onClick={() => navigate('/')} // Navigate to the home page
       >
-       Return to Home
+        <FontAwesomeIcon icon={faHome} /> {/* Replace text with icon */}
       </button>
 
       {/* Left Section */}
